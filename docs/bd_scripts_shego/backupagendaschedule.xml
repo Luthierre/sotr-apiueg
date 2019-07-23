@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job version="9.0">
+<exportjob>
+<source>
+<tunnelinfo type="ssh">
+<sshuser>root</sshuser>
+<sshpwd>masterinfoti@2018</sshpwd>
+<sshhost>10.150.0.122</sshhost>
+<sshport>22</sshport>
+<sshispass>1</sshispass>
+<sshprivatekey></sshprivatekey>
+</tunnelinfo>
+<host>10.150.0.122</host>
+<user>root</user>
+<pwd>masterinfoti@2018</pwd>
+<port>3306</port>
+
+<compressed>1</compressed>
+<ssl>0</ssl>
+<sslauth>0</sslauth>
+<clientkey></clientkey>
+<clientcert></clientcert>
+<cacert></cacert>
+<cipher></cipher>
+<charset></charset>
+</source>
+<export>
+<databases all="no">
+<database name = "agendaueg">
+<objects all="no">
+<tables all="yes">
+</tables>
+<views all="yes">
+</views>
+<procedures all="yes">
+</procedures>
+<functions all="yes">
+</functions>
+<triggers all="yes">
+</triggers>
+<events all="yes">
+</events>
+</objects>
+</database>
+</databases>
+<script compress="yes" fileordir="file" timestampdir="" timestamp="yes">C:\Users\TI-UEG\Documents\bkpagenda-producao-sevidor.zip</script>
+</export>
+<options>
+<createdb>yes</createdb>
+<usedb>yes</usedb>
+<dropobjects>yes</dropobjects>
+<bulkinsert>yes</bulkinsert>
+<completeinsert>yes</completeinsert>
+<insertdelayed>yes</insertdelayed>
+<flushlogs>no</flushlogs>
+<flushmaster>no</flushmaster>
+<flushslave>no</flushslave>
+<locktableread>no</locktableread>
+<singletransaction>no</singletransaction>
+<disablekeys>no</disablekeys>
+<locktablewrite>no</locktablewrite>
+<fkchecks>yes</fkchecks>
+<autocommit>no</autocommit>
+<usecharset>utf8</usecharset>
+<bulksize>0</bulksize>
+<appendtofile>no</appendtofile>
+</options>
+<abortonerror>no</abortonerror>
+<sendreport send="no" /></exportjob>
+</job>

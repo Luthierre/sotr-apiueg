@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ordem-trafego-impressao" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="3a05962a-07df-4ce7-ba53-845b9352be86">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Dataset1" uuid="521c40c8-b533-4ff4-829d-12be326e994e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="ORDEM" class="br.ueg.api.model.OrdemTrafego" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="DATAINICIOROTA" class="java.util.Date"/>
+	<parameter name="HORAINICIOROTA" class="java.lang.String"/>
+	<parameter name="KMINICIOROTA" class="java.math.BigDecimal"/>
+	<parameter name="DATAFIMROTA" class="java.util.Date"/>
+	<parameter name="KMFIMROTA" class="java.math.BigDecimal"/>
+	<parameter name="HORAFIMROTA" class="java.lang.String"/>
+	<parameter name="DATASOLICITACAO" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="localSaida" class="java.lang.String"/>
+	<field name="dataSaida" class="java.util.Date"/>
+	<field name="kmSaida" class="java.math.BigDecimal"/>
+	<field name="localChegada" class="java.lang.String"/>
+	<field name="dataChegada" class="java.util.Date"/>
+	<field name="kmChegada" class="java.math.BigDecimal"/>
+	<field name="kmPercorrido" class="java.math.BigDecimal"/>
+	<field name="horaSaida" class="java.lang.String"/>
+	<field name="horaChegada" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="servico" class="java.lang.String"/>
+	<variable name="SomaTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{kmPercorrido}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="121" y="4" width="560" height="30" uuid="19dab4b1-02af-4cfd-9713-7b2a5303bb64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDADE ESTADUAL DE GOIÁS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="31" width="356" height="59" uuid="7414ea28-265a-4a93-a6be-2acb0ee9a3ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pró-Reitoria de Planejamento, Gestão e Finanças Gerenência de Suprimentos, Contratos e Infraestrutura Coordenação de Transportes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="151">
+			<rectangle>
+				<reportElement x="0" y="31" width="822" height="58" uuid="1cd09d63-0fc0-40e5-a8bd-c969d96fae7d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="133" width="822" height="17" uuid="5ad95605-3cd2-40c0-a289-dd01452869e5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="28" width="98" height="20" uuid="9f1b2834-cb95-44b0-9f4f-a7368499e7b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solicitante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="51" width="101" height="20" uuid="6e5d09cf-2df5-420f-92f6-ee6a2fbec77a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Veiculo/marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="72" width="98" height="20" uuid="4e202a5f-7823-4f84-b976-e9bca7dfffb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Condutor/CPF]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="48" width="821" height="1" uuid="c293295b-3cfe-44bb-b562-78b3e1863ca4"/>
+			</line>
+			<line>
+				<reportElement x="0" y="70" width="821" height="1" uuid="554e2644-9414-4002-a94c-7ab1367c8d9e"/>
+			</line>
+			<line>
+				<reportElement x="101" y="31" width="1" height="57" uuid="9fc30dc7-1f42-4c56-8bdb-7709d05baef0"/>
+			</line>
+			<line>
+				<reportElement x="497" y="31" width="1" height="57" uuid="682e1bc6-83d3-4592-8791-630b6f748f63"/>
+			</line>
+			<line>
+				<reportElement x="622" y="31" width="1" height="58" uuid="b62ca284-9e2c-4f4b-ba6e-de86551d7253"/>
+			</line>
+			<staticText>
+				<reportElement x="502" y="29" width="120" height="22" uuid="3c89b785-7a62-4746-9441-103a6554a273"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data da Solicitação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="502" y="51" width="120" height="16" uuid="6ec28456-a7c4-4f5b-a64d-3bee12cf3a2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="502" y="72" width="120" height="16" uuid="d14f665c-6e46-4492-87ce-05ff5fcd0934"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CNH]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="102" width="822" height="17" backcolor="#A8A8A8" uuid="750f6ed7-7510-4247-b891-61bd5f4c4ac4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="240" y="102" width="320" height="18" forecolor="#000000" uuid="1b698bed-8ebf-455a-8e72-41b268fb77a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rotas(itinerários)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="134" width="330" height="16" uuid="fe1220e3-82a5-490d-b34d-08262a12fe92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Origem]]></text>
+			</staticText>
+			<line>
+				<reportElement x="334" y="133" width="1" height="17" uuid="309dea0e-6fe3-4c2b-a500-b94090ff8767"/>
+			</line>
+			<line>
+				<reportElement x="661" y="133" width="1" height="17" uuid="bd61d77d-c11b-445c-a151-b13fd0d69fee"/>
+			</line>
+			<rectangle>
+				<reportElement x="0" y="1" width="822" height="19" backcolor="#2E2828" uuid="864f4674-ed86-4a7d-9138-9543724cb050"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="241" y="3" width="320" height="17" forecolor="#FCFCFC" uuid="9b3ac088-3a29-44ac-b941-1c4abebd1f75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEM DE TRÁFEGO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="29" width="384" height="17" uuid="91616626-63c6-4836-bc3b-87e8cbeb0ca7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getSolicitante()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="630" y="29" width="190" height="17" uuid="e118163b-b692-479d-889f-55d98387707b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATASOLICITACAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="51" width="383" height="17" uuid="3b330f23-6912-4dba-b4ee-e6ecdd8bba35"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getVeiculo().getFabricante() + " / " + $P{ORDEM}.getVeiculo().getModelo()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="630" y="50" width="190" height="17" uuid="866d595f-8545-43ee-a94a-8991fe47a009"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getVeiculo().getPlaca()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="632" y="72" width="189" height="17" uuid="be59ae00-412c-4de6-9d89-4e7306a13a2f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getCondutor().getNumeroCnh()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="0" width="161" height="20" forecolor="#FCF5F5" uuid="b8244710-a7cf-4116-b370-b0de37ea836e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº: "+$P{ORDEM}.getCodigo()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="109" y="73" width="342" height="17" uuid="d3ca41d4-a833-41a2-aa2d-dea480c6e1e5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getCondutor().getNome()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="677" y="134" width="134" height="16" uuid="e13dea86-4c54-4453-b667-9a3f4197837b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Km percorrido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="134" width="310" height="16" uuid="0ddddad9-c3bb-4307-afab-939013297354"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destino]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="822" height="49" uuid="6d0b1e63-3dce-467e-a8f7-00e8940407b4">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT} % 2 == 0]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement key="" isPrintRepeatedValues="false" mode="Opaque" x="0" y="0" width="822" height="49" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" backcolor="#A8A8A8" uuid="f4144553-785e-4f15-8a86-bdd50240e878">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT} %2 != 0]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="32" width="662" height="1" uuid="354bc4e9-ea57-4cee-b233-9e0eb102f824"/>
+			</line>
+			<line>
+				<reportElement x="171" y="1" width="1" height="31" uuid="6e0bcc60-b153-4fd0-9499-7a1c3ba85d1a"/>
+			</line>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="10" y="16" width="159" height="15" uuid="a518f0e3-aefd-4358-b40c-efa2c9e9ce2f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{localSaida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement stretchType="ElementGroupHeight" x="174" y="16" width="58" height="15" uuid="2f8c9561-9084-4d13-8ff6-e4c592c09847"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataSaida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement stretchType="ElementGroupHeight" x="277" y="16" width="56" height="15" uuid="0f6474f1-0c20-4e13-9bc2-af3b53c4fda9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kmSaida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement stretchType="ElementGroupHeight" x="613" y="16" width="48" height="15" uuid="ed0d4830-63d6-487c-91e5-e165d221c805"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kmChegada}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement stretchType="ElementGroupHeight" x="493" y="16" width="74" height="15" uuid="59ba3af5-c8ee-4229-834e-5b3e38a1f804"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataChegada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="339" y="16" width="150" height="15" uuid="7290b346-9561-47df-8e6a-f76464a3adef"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{localChegada}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="661" y="1" width="158" height="46" uuid="658217cd-d985-4fbe-8567-fcf2725cbfa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kmPercorrido}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="239" y="16" width="38" height="15" uuid="b86d86e2-9284-4b61-8917-3b930c8a258f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaSaida}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="566" y="16" width="47" height="15" uuid="80dc575d-8fc9-47c7-af0b-7e8b17130da4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaChegada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="34" width="55" height="15" uuid="fcc3550c-c0b6-4ee9-89fe-c9aa6faab427"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<line>
+				<reportElement x="57" y="33" width="1" height="15" uuid="9f349453-fbfd-47c6-9f76-d6eb647a47e8"/>
+			</line>
+			<staticText>
+				<reportElement x="281" y="34" width="111" height="15" uuid="1084ba6c-3d68-4356-82bc-2ac15dd97d8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serviço a executar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="392" y="33" width="1" height="15" uuid="2ac0ca62-3429-445a-b90b-354cfd44b984"/>
+			</line>
+			<textField>
+				<reportElement x="65" y="34" width="210" height="15" uuid="89275abf-e467-432d-80e6-f3f96cc1066c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="34" width="256" height="15" uuid="8ccad77a-58e0-409e-9f9d-9cc185893279"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="168" height="15" uuid="3c03338a-d8b9-4ee9-a579-1c7d367f1776"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="0" width="66" height="15" uuid="b1191fe4-ee66-4457-88fc-d57dbe45fa03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="56" height="15" uuid="f917bb87-ef3f-4a1b-be63-bc329bced0cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Km]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="0" width="155" height="15" uuid="9a6edf95-c3fb-49a5-a022-0132d4b6e43f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="0" width="74" height="15" uuid="f95f740f-329f-45ea-930f-d942794ae4ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="616" y="0" width="45" height="15" uuid="bf3e7b07-b55b-4fb3-8e1e-7f0bab573b83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Km]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="38" height="15" uuid="692af2e5-59d0-4615-aeef-0a36e4ae1abd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="567" y="0" width="46" height="15" uuid="ef36959e-8045-4dba-8e5f-1c1e92176b61"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<line>
+				<reportElement x="238" y="0" width="1" height="31" uuid="6f1e6623-6643-43f2-b7bd-9dc9682f7d7c"/>
+			</line>
+			<line>
+				<reportElement x="566" y="0" width="1" height="32" uuid="f128811e-161e-48f9-9819-efdfeed7f6fb"/>
+			</line>
+			<line>
+				<reportElement x="489" y="0" width="1" height="32" uuid="ac493c05-cb3b-462e-a1f8-0e4b74b51caf"/>
+			</line>
+			<line>
+				<reportElement x="613" y="1" width="1" height="31" uuid="8512d5b6-00e9-492c-8223-2faa1444933b"/>
+			</line>
+			<line>
+				<reportElement x="276" y="0" width="1" height="49" uuid="25f2b765-0129-4b4a-ac8f-3e262c9081d6"/>
+			</line>
+			<line>
+				<reportElement x="661" y="0" width="1" height="49" uuid="c09ff5cc-7398-467f-933e-8ce2c82dd1f3"/>
+			</line>
+			<line>
+				<reportElement x="334" y="0" width="1" height="32" uuid="25177923-f80d-4187-8889-4cb771c9f02b"/>
+			</line>
+			<line>
+				<reportElement x="0" y="14" width="662" height="1" uuid="7950d29c-023b-495b-a77e-457519fe97ef"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="43">
+			<rectangle>
+				<reportElement x="0" y="8" width="822" height="33" uuid="b00bb6f9-6313-41ae-8c44-db88640ba8e7"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="22" width="822" height="2" uuid="6aafe4ed-e8a8-4f44-aec4-97170ed195e5"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="8" width="330" height="15" uuid="613bb1cd-d43f-4360-87b0-46f079ce597a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utilização do dia - Saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="8" width="338" height="15" uuid="4dec1db0-1743-4a78-87be-bbe35078b99f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utilização do dia - Retorno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="669" y="8" width="152" height="15" uuid="cc726e9c-2122-4db1-9225-ab9d530509da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Km Percorrido]]></text>
+			</staticText>
+			<line>
+				<reportElement x="668" y="8" width="1" height="33" uuid="6110396a-d304-4f4c-b8da-d8d4d0f0beab"/>
+			</line>
+			<line>
+				<reportElement x="330" y="8" width="1" height="33" uuid="877de083-0798-45ee-b653-5e7537666283"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="26" width="70" height="15" uuid="94f39950-fa37-4003-8575-bb4c37a73373"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data/Hora]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="23" width="1" height="18" uuid="a587642d-bb3d-45d2-81c8-ce84e1a05f8c"/>
+			</line>
+			<line>
+				<reportElement x="200" y="24" width="1" height="17" uuid="a6e88c22-3f8f-4648-938f-0883fc2ef0ed"/>
+			</line>
+			<staticText>
+				<reportElement x="200" y="26" width="80" height="15" uuid="ae871409-656c-4e72-8984-76f8f3493441"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hodômetro]]></text>
+			</staticText>
+			<line>
+				<reportElement x="280" y="23" width="1" height="17" uuid="cc67bd98-364e-4492-8530-30172ae27a87"/>
+			</line>
+			<staticText>
+				<reportElement x="330" y="26" width="70" height="15" uuid="d20efa37-e0de-49a5-abfc-74b8ad34631d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data/Hora]]></text>
+			</staticText>
+			<line>
+				<reportElement x="400" y="24" width="1" height="17" uuid="34b9152d-44e6-400f-85c9-5f8886e8703c"/>
+			</line>
+			<line>
+				<reportElement x="520" y="24" width="1" height="17" uuid="0d2bf84b-47ae-40fa-a5f7-bdf205ae4012"/>
+			</line>
+			<staticText>
+				<reportElement x="530" y="26" width="78" height="15" uuid="0f4f5bd7-8992-4ba3-a87d-3282c4589e89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hodômetro]]></text>
+			</staticText>
+			<line>
+				<reportElement x="608" y="24" width="1" height="17" uuid="5e4267b8-c9ae-464f-bb50-efdbd77274bb"/>
+			</line>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="669" y="26" width="152" height="15" uuid="6eeb2098-2a4b-4210-a6ab-f37cab74e219"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SomaTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="71" y="26" width="79" height="15" uuid="5ce35bca-6408-49b5-a67e-f1b6956ddfd5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATAINICIOROTA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="280" y="26" width="50" height="15" uuid="32e6bba8-c5cd-4df0-947b-869766134a3b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{KMINICIOROTA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="608" y="26" width="60" height="15" uuid="6f491b49-5a13-411c-9a62-7681f19d804c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{KMFIMROTA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="400" y="26" width="80" height="15" uuid="4fbbc786-9936-4eae-803e-484c4a92244d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATAFIMROTA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="26" width="50" height="15" uuid="9db0f647-fe76-4c5f-b618-c5c9a51e9579"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{HORAINICIOROTA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="480" y="26" width="40" height="15" uuid="fc6b5bd9-ff93-4ec1-b54d-f687ca08b2bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{HORAFIMROTA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="105">
+			<staticText>
+				<reportElement x="2" y="4" width="819" height="18" uuid="d6efd8b4-588a-4625-b8fa-1cd15903edcc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TERMO DE RESPONSABILIDADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="23" width="819" height="36" uuid="54cb809b-7543-4a2f-87b2-89a35cb94b52"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Durante o período supramencionado, declaro que ficarei responsável pelo USO  e pela GUARDA do veículo, o qual será conduzido consoante as determinações do Código de Trânsito Brasileiro e utilizando no exclusivo interesse do serviço público inerente a este Estado.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="91" y="67" width="250" height="1" uuid="b6b9e834-38c7-4e38-be44-8cbfd1557bd8"/>
+			</line>
+			<line>
+				<reportElement x="487" y="68" width="250" height="1" uuid="f7b776d8-5b3c-47df-a3a1-f7efa0cde938"/>
+			</line>
+			<staticText>
+				<reportElement x="497" y="70" width="230" height="19" uuid="29ce5459-d45b-4a29-b935-2f15e4773793"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gestor(a) da Frota/Diretor]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="766" y="95" width="54" height="10" uuid="242d9a7b-9fcc-4887-9edb-a0c4968dd9f9"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de  " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="656" y="95" width="108" height="10" uuid="f16d40f6-d238-4c5f-a5b5-90e18f365161"/>
+				<textElement textAlignment="Right">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="98" y="69" width="241" height="19" uuid="8a8be195-3a09-40b1-83fd-8bda06b66f85"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified">
+					<font size="10" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ORDEM}.getCondutor().getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="92" width="309" height="13" uuid="a3b8452d-0e90-4533-9ba0-8be973b3d58a"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Relátorio gerado em : " + DATEFORMAT(new Date(),"dd/MM/yyyy HH:mm:ss") + " por : " + $P{ORDEM}.getUsuario().getNome()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

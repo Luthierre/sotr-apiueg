@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rotas-ordem-trafego-impressao" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f7c2d2f-373b-4d86-97a3-443d9455d9ba">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="codigoOrdem" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="rota" class="br.ueg.api.model.Rota"/>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="20" width="802" height="1" uuid="d2c5465d-e906-43a2-96f2-864db304575a"/>
+			</line>
+			<line>
+				<reportElement x="159" y="-2" width="1" height="22" uuid="47eaae8d-ff7b-48f2-9cd5-66ec9f35399e"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-2" width="1" height="23" uuid="609e2d88-c975-42ec-9cd3-7d21cfc8ad97"/>
+			</line>
+			<line>
+				<reportElement x="237" y="-1" width="1" height="22" uuid="86ff9f5a-a956-475a-815b-5cb33d70d65d"/>
+			</line>
+			<line>
+				<reportElement x="319" y="-2" width="1" height="22" uuid="7423e14b-b7c8-4de9-98be-6ff149b3ca76"/>
+			</line>
+			<line>
+				<reportElement x="479" y="-1" width="1" height="21" uuid="78699ba9-89d6-4ee5-bce7-e039798f3cb5"/>
+			</line>
+			<line>
+				<reportElement x="559" y="-1" width="1" height="22" uuid="e99e6b6a-54e2-4b91-9e51-5b735b5a2717"/>
+			</line>
+			<line>
+				<reportElement x="639" y="-1" width="1" height="22" uuid="5e2a283d-8a3f-47d8-a8a9-95523907a50a"/>
+			</line>
+			<line>
+				<reportElement x="801" y="0" width="1" height="21" uuid="4a9e5c60-312d-4a97-bd1e-95f29071fa2e"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="524c0eac-1729-4266-9f23-ddfd98f3844b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}.getLocalSaida()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="80" height="20" uuid="923f0291-13cf-43b2-b027-3f652ff7e2e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rota}.getDataSaida()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="80" height="20" uuid="0ca543c5-e1e4-421d-b085-58b9a819f039"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}.getKmSaida()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="160" height="20" uuid="ad8910c0-f196-47b0-8047-38d526ac9048"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}.getLocalChegada()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="0" width="80" height="20" uuid="7a258e76-bc84-48e3-8807-a3bdd33121b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rota}.getDataChegada()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="561" y="0" width="80" height="20" uuid="a603778c-2573-489b-b18a-ffb55da08e40"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}.getKmSaida()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="160" height="20" uuid="6e6e2df9-dee8-40e5-8584-7ff92fb326f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}.getKmPercorrido()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
